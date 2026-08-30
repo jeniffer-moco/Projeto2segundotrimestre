@@ -1,66 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Blog</title>
-        <style>
-          header{
-            background-color:#86004E;
-            color: #F1D7E0;
-            text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 16px;
-            border: 5px solid #E888AA;
-          }
-          main{
-            background-color:#F1D7E0;
-            color:#86004E;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 16px;
-            overflow: hidden;
-          }
-          img{
-            width: 250px;        
-            height: 250px;
-            float: left; /* Coloca a imagem à esquerda e o texto ao lado */
-            margin-right: 15px; 
-            margin-bottom: 5px; 
-            border-radius: 8px;
-          }
-          .artigo-autor {
-            font-weight: bold;
-          }
-        </style>
-    </head>
-    <body>
-        <header>
-            <h1>Blog da Barbie</h1>
-            <p>Dicas com amizades, garotos e desafios do cotidiano de uma menina.</p>
-        </header>
-        <main>
-            <img src="imagem-blog.jpg" alt="Ilustração da Barbie sorrindo enquanto segura um filhote de cachorro caramelo. Ela está sentada em frente a um teclado de computador em seu quarto rosa, com o logotipo 'Barbie Vlogger' em destaque ao lado.">
-            <div>
-            <h2>O primeiro post da Barbie</h2>
-            <p class="artigo-autor">Por: Jeniffer Moço</p>
-            <p>Boas-vindas ao novo blog da Barbie! Aqui você pergunta e ela responde com conselhos e dicas para garotas que estão entrando na juventude.</p>
-            <button>🩷​ <span>0</span></button>
-            <button>👍​ <span>0</span></button>
-            </div>
-        
-          </main>
-    </body>
-    <script>
-      const botao = document.querySelectorAll("button");
-      botao.addEventListener("click", botaoClicado);
 
-      function botaoClicado(){
-        console.log("fui clicado");
-        let texto = botao.querySelector("span");
-        texto.textContent++;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <style>
+    header {
+      background-color: #86004E;
+      color: #F1D7E0;
+      text-align: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 16px;
+      border: 5px solid #E888AA;
+    }
 
-    </script>
+    main {
+      background-color: #F1D7E0;
+      color: #86004E;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 16px;
+      overflow: hidden;
+    }
+    article{
+      display:flex;
+    }
+
+    img {
+      width: 250px;
+      height: 250px;
+      float: left;
+      /* Coloca a imagem à esquerda e o texto ao lado */
+      margin-right: 15px;
+      margin-bottom: 5px;
+      border-radius: 8px;
+    }
+
+    .artigo-autor {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Blog da Barbie</h1>
+    <p>Dicas com amizades, garotos e desafios do cotidiano de uma menina.</p>
+  </header>
+  <main>
+    <article>
+      <img src="imagem-blog.jpg"
+      alt="Ilustração da Barbie sorrindo enquanto segura um filhote de cachorro caramelo. Ela está sentada em frente a um teclado de computador em seu quarto rosa, com o logotipo 'Barbie Vlogger' em destaque ao lado.">
+      <div>
+        <h2>O primeiro post da Barbie</h2>
+        <p class="artigo-autor">Por: Jeniffer Moço</p>
+        <p>Boas-vindas ao novo blog da Barbie! Aqui você pergunta e ela responde com conselhos e dicas para garotas que
+          estão entrando na juventude.</p>
+          <button>🩷​ <span>0</span></button>
+          <button>👍​ <span>0</span></button>
+        </div>
+    </article>
+    <article>
+      <img src="imagem-blog.jpg"
+        alt="Ilustração da Barbie sorrindo enquanto segura um filhote de cachorro caramelo. Ela está sentada em frente a um teclado de computador em seu quarto rosa, com o logotipo 'Barbie Vlogger' em destaque ao lado.">
+      <div>
+        <h2>O primeiro post da Barbie</h2>
+        <p class="artigo-autor">Por: Jeniffer Moço</p>
+        <p>Boas-vindas ao novo blog da Barbie! Aqui você pergunta e ela responde com conselhos e dicas para garotas que
+          estão entrando na juventude.</p>
+        <button>🩷​ <span>0</span></button>
+        <button>👍​ <span>0</span></button>
+      </div>
+    </article>  
+
+  </main>
+</body>
+<script>
+  const botoes = document.querySelectorAll("button");
+
+  botoes.forEach(function (botao) {
+    botao.addEventListener("click", botaoClicado);
+
+    function botaoClicado() {
+      console.log("fui clicado");
+      let texto = botao.querySelector("span");
+      texto.textContent++;
+    }
+  })
+
+
+</script>
+
 </html>
