@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog</title>
+  
   <style>
     header {
       background-color: #86004E;
@@ -26,6 +27,7 @@
     }
     article{
       display:flex;
+      margin-bottom: 20px;
     }
 
     img {
@@ -36,11 +38,20 @@
       margin-right: 15px;
       margin-bottom: 5px;
       border-radius: 8px;
+      object-fit: cover;/*evita que a imagem fique achatada*/
     }
 
     .artigo-autor {
-      font-weight: bold;
+      font-weight: bold;/*fontes com o nome do autor ficam em negrito*/
     }
+
+    .secao-video {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 2px dashed #E888AA;
+    }
+
   </style>
 </head>
 
@@ -49,6 +60,7 @@
     <h1>Blog da Barbie</h1>
     <p>Dicas com amizades, garotos e desafios do cotidiano de uma menina.</p>
   </header>
+  
   <main>
     <article>
       <img src="imagem-blog.jpg"
@@ -59,24 +71,30 @@
         <p>Boas-vindas ao novo blog da Barbie! Aqui você pergunta e ela responde com conselhos e dicas para garotas que
           estão entrando na juventude.</p>
           <button>🩷​ <span>0</span></button>
-          <button>👍​ <span>0</span></button>
         </div>
     </article>
+
     <article>
-      <img src="imagem-blog.jpg"
-        alt="Ilustração da Barbie sorrindo enquanto segura um filhote de cachorro caramelo. Ela está sentada em frente a um teclado de computador em seu quarto rosa, com o logotipo 'Barbie Vlogger' em destaque ao lado.">
+      <img src="imagem-amigas.jpg" alt="Ilustração de quatro amigas da linha My First Barbie abraçadas com seus pets em um fundo rosa.">
       <div>
-        <h2>O primeiro post da Barbie</h2>
+        <h3>A importância das amizades verdadeiras</h3>
         <p class="artigo-autor">Por: Jeniffer Moço</p>
-        <p>Boas-vindas ao novo blog da Barbie! Aqui você pergunta e ela responde com conselhos e dicas para garotas que
-          estão entrando na juventude.</p>
+        <p>Sabe aqueles dias em que nada parece dar certo e a gente só quer ficar no quarto? É nessas horas que as amigas verdadeiras brilham! Ter alguém para dividir os segredos, dar risadas de coisas bobas e até chorar assistindo a um filme faz toda a diferença</p>
+        <p>Sempre valorize quem está ao seu lado, tanto nas melhores festas quanto nos momentos de desafio. Uma boa conversa, um abraço apertado e um ombro amigo resolvem quase tudo. Lembre-se: juntas somos mais fortes e podemos conquistar qualquer coisa!</p>
         <button>🩷​ <span>0</span></button>
-        <button>👍​ <span>0</span></button>
       </div>
     </article>  
 
+    <section class="secao-video">
+      <h2>Irmãs da Barbie Respondem!</h2>
+      <p>Confira este vídeo super legal onde as irmãs da Barbie respondem aos e-mails dos fãs!</p> 
+      <!-- a tag <iframe> é usada para incorporar conteúdos de outros sites, como neste caso um vídeo do YouTube -->
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/56FyKZ30rZ0?si=jZIPf3Up8PuDUFJw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  
+    </section>
+
   </main>
 </body>
+
 <script>
   const botoes = document.querySelectorAll("button");
 
@@ -87,6 +105,7 @@
     function botaoClicado() {
       console.log("fui clicado");
       let texto = botao.querySelector("span");
+      /* essa função faz com que quando clicar no botão, aumenta um número, mas se clicar novamente retira esse número*/
       if(curtiu === false){
         texto.textContent++;
         curtiu = true;
